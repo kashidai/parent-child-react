@@ -5,13 +5,27 @@ class Child extends React.Component{
     constructor(props) {
         super(props);
         this.func = this.func.bind(this);
+        console.log(this)
     }
-    func() {
-        this.props.setTest(' HELLOOOOOOOOOOOOOOOOOOO')
+
+    func(){
+        this.props.showText();
     }
+
+    delete=()=>{
+        console.log(this);
+        this.props.deleteText();
+
+    }
+
     render() {
+
+        console.log(this.props);
         return (
-            <button onClick={this.func}>btn</button>
+            <div>
+                <button onClick={this.func}>btn</button>
+                <button onClick={this.delete}>reset</button>
+            </div>
         );
     }
 }

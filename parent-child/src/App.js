@@ -1,5 +1,6 @@
 import React from "react";
 import Child from "./child";
+import Canada from  "./canada"
 
 class App extends React.Component{
     constructor(props) {
@@ -7,19 +8,20 @@ class App extends React.Component{
         this.state = {
             test: ""
         };
-        this.setTest = this.setTest.bind(this)
+        // this.setTest = this.setTest.bind(this)
     }
-    setTest(value) {
+    setTest = (value) => {
         this.setState({
             test: value
         })
     }
     render() {
-        let test = this.state.test
+        const test = this.state.test;
         return (
             <div>
                 <Child setTest={this.setTest} />
                 <p>{ test }</p>
+                <Canada/>
             </div>
         );
     }
